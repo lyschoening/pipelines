@@ -345,7 +345,7 @@ class Client(object):
         }
       ]
     })
-    result = self._pipelines_api.list_pipelines(filter=pipeline_filter)
+    result = self._pipelines_api.list_pipelines(filter=pipeline_filter) or []
     if len(result.pipelines)==1:
       return result.pipelines[0].id
     elif len(result.pipelines)>1:
